@@ -1,0 +1,933 @@
+/*! ------------------------------------------------
+   Project Name: Hintio Coming Soon & Landing Page Template
+   Project Description: Hintio - clean and bold coming soon & landing page template to kick-start your project
+   Tags: mix_design, hintio, coming soon, under construction, template, coming soon page, landing page, one page, html5, css3
+   Version: 2.0.2
+   Build Date: July 2020
+   Last Update: January 2024
+   This product is available exclusively on Themeforest
+   Author: mix_design
+   Author URI: https://themeforest.net/user/mix_design
+   File name: main-demo.css
+   ------------------------------------------------
+
+   ------------------------------------------------
+   Table of Contents
+   ------------------------------------------------
+    1. Loader
+    2. Loading Animation
+    3. Fonts
+    4. Base CSS Styles
+    5. Cursor
+    6. Typography
+    7. Buttons & Triggers
+    8. Intro
+    9. Preview Sections
+    10. Sections Heading
+    11. Preview Links
+    12. Subscribe Section
+    13. Footer
+   ------------------------------------------------
+   Table of Contents End
+   ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+@import "partials/variables"
+
+/* ------------------------------------------------*/
+/* Loader Start
+/* ------------------------------------------------*/
+@import "loaders/loader"
+/* ------------------------------------------------*/
+/* Loader End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Loading Animation Start
+/* ------------------------------------------------*/
+body
+  // 1-st state
+  .headline
+    opacity: 0
+  header
+    .logo,
+    .buttons
+      opacity: 0
+  .intro__illustrations
+    .illustration-1,
+    .illustration-2,
+    .illustration-3,
+    .illustration-4,
+    .illustration-5,
+    .object-1,
+    .object-2
+      opacity: 0
+
+  &.loaded
+    // 1-st Items Loading
+    .headline
+      animation: $animation-duration - 0.3s $animation-delay ease-in-out 1 both slideInUp
+    header
+      .logo,
+      .buttons
+        animation: $animation-duration $animation-delay ease-in-out 1 both fadeIn
+    .intro__illustrations
+      .illustration-1
+        animation: $animation-duration $animation-delay ease-in-out 1 both fadeIn
+
+    // 2-nd Items Loading
+    .intro__illustrations
+      .illustration-2
+        animation: $animation-duration - 0.3s $animation-delay + .6s ease-in-out 1 both slideInUp
+      .illustration-4
+        animation: $animation-duration - 0.3s $animation-delay + .6s ease-in-out 1 both slideInUp
+
+      .illustration-3
+        animation: $animation-duration - 0.3s $animation-delay + .8s ease-in-out 1 both slideInUp
+      .illustration-5
+        animation: $animation-duration - 0.3s $animation-delay + .8s ease-in-out 1 both slideInUp
+
+    // 3-rd Items loading
+    .intro__illustrations
+      .object-1
+        animation: $animation-duration $animation-delay + 1.2s ease-in-out 1 both slideInUp
+      .object-2
+        animation: $animation-duration $animation-delay + 1.2s ease-in-out 1 both slideInDown
+/* ------------------------------------------------*/
+/* Loading Animation End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Fonts Start
+/* ------------------------------------------------*/
+// Montserrat Font
++font-face("Montserrat", "../fonts/Montserrat-Light/Montserrat-Light", 300, normal, $file-formats: eot woff woff2 ttf svg)
++font-face("Montserrat", "../fonts/Montserrat-Regular/Montserrat-Regular", 400, normal, $file-formats: eot woff woff2 ttf svg)
++font-face("Montserrat", "../fonts/Montserrat-Medium/Montserrat-Medium", 500, normal, $file-formats: eot woff woff2 ttf svg)
++font-face("Montserrat", "../fonts/Montserrat-SemiBold/Montserrat-SemiBold", 600, normal, $file-formats: eot woff woff2 ttf svg)
++font-face("Montserrat", "../fonts/Montserrat-Bold/Montserrat-Bold", 700, normal, $file-formats: eot woff woff2 ttf svg)
++font-face("Montserrat", "../fonts/Montserrat-ExtraBold/Montserrat-ExtraBold", 800, normal, $file-formats: eot woff woff2 ttf svg)
+/* ------------------------------------------------*/
+/* Fonts End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Base CSS Styles Start
+/* ------------------------------------------------*/
+*, *::before, *::after
+  box-sizing: border-box
+
+button:active, button:focus
+  outline: none !important
+
+button::-moz-focus-inner
+  border: 0 !important
+
+input::-moz-focus-inner
+  border: 0 !important
+
+::selection
+  background-color: tint($black, 60%)
+  color: $txt-bright
+  text-shadow: none
+
+html
+  font-family: sans-serif
+  font-size: 62.5%
+  +font-smoothing
+
+html,
+body
+  width: 100%
+  height: 100%
+
+body
+  position: relative
+  min-width: 320px
+  overflow-x: hidden !important
+  font: normal 400 1.6rem/1.4 $default-font
+  background-color: $black
+  color: $txt-medium
+
+section
+  position: relative
+  min-width: 320px
+
+a
+  text-decoration: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  transition: all $animation-duration ease-in-out
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+.overflow-hidden
+  overflow: hidden !important
+
+.color-layer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.color-layer-medium
+  +cover-medium
+
+.color-layer-dark
+  +cover-dark
+/* ------------------------------------------------*/
+/* Base CSS Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Cursor Styles Start
+/* ------------------------------------------------*/
+@import "modules/block-cursor"
+/* ------------------------------------------------*/
+/* Cursor Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Typography Start
+/* ------------------------------------------------*/
+h1
+  font: normal 700 3.6rem/.9 $default-font
+  text-transform: uppercase
+  color: $txt-bright
+  span
+    &.outline-white
+      +outline-text-white-1px
+    &.outline-colored
+      +outline-text-crimson-1px
+    &.colored
+      color: $txt-crimson
+  &.medium
+    font-size: 8rem
+    span
+      &.outline-white
+        +outline-text-white-2px
+      &.outline-colored
+        +outline-text-crimson-2px
+  +MQ(M)
+    max-width: 650px !important
+    margin: 0 auto
+  +MQ(XL)
+    font-size: 5.6rem
+    max-width: 1000px !important
+    &.medium
+      font-size: 11rem
+  +MQ(XXL)
+    font-size: 6rem
+
+.section-caption
+  display: block
+  position: relative
+  opacity: .5
+  font: normal 800 13.4rem/.84 $default-font
+  text-transform: uppercase
+  color: $crimson
+  -webkit-text-fill-color: transparent
+  -webkit-text-stroke-width: 1px
+  -webkit-text-stroke-color: $crimson
+  &.bright
+    opacity: 1
+  &.left
+    right: 32px
+    text-align: left
+  &.right
+    left: 32px
+    text-align: right
+  +MQ(M)
+    font-size: 13.4rem
+    &.left
+      right: 42px
+    &.right
+      left: 42px
+  +MQ(XL)
+    font-size: 20rem
+    &.left
+      right: 62px
+    &.right
+      left: 62px
+
+.heading__title
+  font: normal 700 2.8rem/1 $default-font
+  text-transform: uppercase
+  color: $txt-bright
+  +MQ(M)
+    max-width: 500px
+    margin: 0 auto
+    font-size: 4rem
+  +MQ(XXL)
+    max-width: 600px
+    font-size: 5rem
+
+.heading__subtitle
+  font: normal 400 1.4rem/1.4 $default-font
+  color: $txt-medium
+  margin-top: 1.4rem
+  +MQ(M)
+    max-width: 500px
+    margin: 2.4rem auto 0
+  +MQ(XL)
+    font-size: 1.6rem
+  +MQ(XXL)
+    max-width: 600px
+    font-size: 1.6rem
+
+.links__caption
+  p
+    margin-top: 1.4rem
+    font: normal 400 1.1rem/1.2 $default-font
+    text-transform: uppercase
+    color: $txt-muted
+    letter-spacing: 2px
+  +MQ(M)
+    p
+      margin-top: 1.4rem
+      font-size: 1.2rem
+
+.subscribe__title
+  .title
+    font: normal 700 2.8rem/1 $default-font
+    text-transform: uppercase
+    color: $txt-bright
+    span
+      color: $txt-crimson
+  .subtitle
+    font: normal 400 1.4rem/1.4 $default-font
+    color: $txt-medium
+    max-width: 460px
+    margin: 2.4rem auto 0
+  +MQ(M)
+    .title
+      font-size: 4rem
+  +MQ(XL)
+    .subtitle
+      font-size: 1.6rem
+
+.footer
+  p
+    font: normal 600 1.2rem/1.2 $default-font
+    text-transform: uppercase
+    color: $txt-bright
+  a
+    font: normal 600 1.2rem/1.2 $default-font
+    color: $txt-bright
+    .no-touch &:hover
+      color: $txt-crimson
+  i
+    color: $crimson
+  +MQ(M)
+    p, a
+      font-size: 1.4rem
+/* ------------------------------------------------*/
+/* Typography End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Buttons & Triggers Start
+/* ------------------------------------------------*/
+.btn
+  position: relative
+  display: block
+  border: none
+  outline: 0
+  padding: 0
+  font: normal 600 1.4rem/1.2 $default-font
+  text-transform: uppercase
+  color: $txt-bright
+  cursor: pointer
+  text-decoration: none
+  user-select: none
+  overflow: hidden
+  +MQ(S)
+    display: inline-block
+  .no-touch &:hover
+    color: $txt-bright
+    .btn-icon-right
+      transform: translateX(7px)
+
+.btn-cart
+  +position(absolute, 0 15px null null)
+  width: 30px
+  height: 30px
+  line-height: 30px
+  font-size: 2.2rem
+  text-align: right
+  .caption
+    display: none
+  +MQ(XL)
+    width: auto
+    height: auto
+    font-size: 1.4rem
+    overflow: visible
+    line-height: normal
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      bottom: -4px
+      +center(x)
+      width: 100%
+      height: 1px
+      background-color: $crimson
+      transition: width .3s ease-in-out
+    i
+      display: none
+    .caption
+      display: block
+    .no-touch &:hover
+      &::after
+        width: 0%
+
+.btn-fill
+  background-color: $crimson
+  height: 4.4rem
+  line-height: 4.4rem
+  padding: 0 2rem
+  text-align: center
+  margin: 0 auto
+  transition: background-color .3s ease-in-out
+  .no-touch &:hover
+    background-color: tint($crimson, 10%)
+
+.to-top
+  display: inline-block
+  width: 4.4rem
+  height: 4.4rem
+  line-height: 4.4rem
+  +position(fixed, null 20px 20px null)
+  background-color: $crimson
+  overflow: hidden
+  z-index: 3
+  color: $txt-bright
+  font-size: 1.4rem
+  text-align: center
+  visibility: hidden
+  opacity: 0
+  transition: opacity $animation-delay 0s, visibility 0s $animation-delay
+  .no-touch &:hover
+    transition: opacity $animation-delay 0s, visibility 0s 0s
+    opacity: 1
+    color: $txt-bright
+  &.is-visible, &.fade-out
+    transition: opacity $animation-delay 0s, visibility 0s 0s
+  &.is-visible
+    visibility: visible
+    opacity: 1
+  &.fade-out
+    opacity: 0.4
+  +MQ(M)
+    +position(fixed, null 20px 20px null)
+/* ------------------------------------------------*/
+/* Buttons & Triggers End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Intro Start
+/* ------------------------------------------------*/
+.intro
+  position: relative
+  background-image: url('../img/demo/bg-demo.webp')
+  background-repeat: no-repeat
+  background-position: top center
+  background-size: cover
+  padding-bottom: 150px
+  .color-layer
+    background-image: url('../img/demo/demo-pattern.svg')
+    background-repeat: repeat-x
+    background-position: left bottom
+    background-size: auto
+  +MQ(M)
+    padding-bottom: 350px
+  +MQ(L)
+    padding-bottom: 460px
+  +MQ(XXL)
+    padding-bottom: 660px
+
+.intro__header
+  position: relative
+  padding: 3rem calc(10% - 1.5rem) 0 calc(10% - 1.5rem)
+  z-index: 1
+  +MQ(M)
+    padding: 5rem calc(10% - 1.5rem) 0 calc(10% - 1.5rem)
+  +MQ(XL)
+    padding: 6rem 8.5rem 0 8.5rem
+  +MQ(XXL)
+    padding: 8rem 10.5rem 0 10.5rem
+
+.header__logo
+  text-align: left
+  img
+    display: block
+    width: auto
+
+.header__buttons
+  position: relative
+  text-align: right
+
+.intro__content
+  position: relative
+
+.headline
+  padding: 10rem calc(10% - 1.5rem)
+  text-align: center
+  +MQ(XL)
+    padding: 13rem 8.5rem
+  +MQ(XXL)
+    padding: 16rem 10.5rem
+
+.intro__illustrations
+  position: absolute
+  left: 0
+  bottom: -50px
+  width: 100%
+  height: 227px
+  overflow: hidden
+  z-index: 10
+  +MQ(M)
+    height: 497px
+    bottom: -100px
+  +MQ(L)
+    bottom: -134px
+    height: 671px
+  +MQ(XXL)
+    bottom: -170px
+    height: 941px
+
+.illustration-1
+  position: absolute
+  +center(x)
+  bottom: 0
+  width: 320px
+  height: 227px
+  background-image: url('../img/demo/illustration-1.webp')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  z-index: 1
+  +MQ(M)
+    width: 700px
+    height: 497px
+  +MQ(L)
+    width: 946px
+    height: 671px
+  +MQ(XXL)
+    width: 1326px
+    height: 941px
+
+.illustration-2, .illustration-3, .illustration-4, .illustration-5
+  display: none
+  +MQ(XL)
+    display: block
+
+.illustration-2
+  position: absolute
+  left: 66px
+  top: 200px
+  width: 516px
+  height: 290px
+  background-image: url('../img/demo/illustration-2.webp')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  +MQ(XL)
+    left: 38px
+    top: 140px
+    width: 360px
+    height: 202px
+  +MQ(XXL)
+    left: 50px
+    top: 196px
+    width: 516px
+    height: 290px
+
+.illustration-3
+  position: absolute
+  left: 118px
+  top: 414px
+  width: 300px
+  height: 225px
+  background-image: url('../img/demo/illustration-3.webp')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+  +MQ(XL)
+    left: 90px
+    top: 230px
+    width: 208px
+    height: 235px
+  +MQ(XXL)
+    left: 120px
+    top: 324px
+    width: 300px
+    height: 339px
+
+.illustration-4
+  position: absolute
+  right: 60px
+  top: 240px
+  width: 516px
+  height: 290px
+  background-image: url('../img/demo/illustration-4.webp')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  +MQ(XL)
+    right: 60px
+    top: 170px
+    width: 360px
+    height: 202px
+  +MQ(XXL)
+    right: 60px
+    top: 240px
+    width: 516px
+    height: 290px
+
+.illustration-5
+  position: absolute
+  right: -120px
+  top: 420px
+  width: 516px
+  height: 290px
+  background-image: url('../img/demo/illustration-5.webp')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+  +MQ(XL)
+    right: -80px
+    top: 290px
+    width: 360px
+    height: 202px
+  +MQ(XXL)
+    right: -120px
+    top: 424px
+    width: 516px
+    height: 290px
+/* ------------------------------------------------*/
+/* Intro End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Preview Sections Start
+/* ------------------------------------------------*/
+.demo
+  padding: 3rem 0
+  background-color: tint($black, 6%)
+  &.first-section
+    padding: 13rem 0 3rem 0
+  +MQ(M)
+    padding: 4rem 0
+    &.first-section
+      padding: 16rem 0 4rem 0
+  +MQ(L)
+    &.first-section
+      padding: 18rem 0 4rem 0
+  +MQ(XL)
+    &.first-section
+      padding: 19rem 0 4rem 0
+  +MQ(XXL)
+    padding: 5rem 0
+    &.first-section
+      padding: 22rem 0 5rem 0
+
+.demo__background
+  +position(absolute, 0 null null 0)
+  width: 100%
+  overflow: hidden
+  //background-color: pink
+
+.demo
+  &.first-section
+    .demo__background
+      top: 10rem
+    +MQ(M)
+      .demo__background
+        top: 11.6rem
+    +MQ(L)
+      .demo__background
+        top: 14rem
+    +MQ(XL)
+      .demo__background
+        top: 15rem
+    +MQ(XXL)
+      .demo__background
+        top: 17.4rem
+/* ------------------------------------------------*/
+/* Preview Sections End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Sections Heading Start
+/* ------------------------------------------------*/
+.demo__heading
+  position: relative
+  width: 100%
+  padding: 5rem calc(10% - 1.5rem)
+  text-align: center
+  +MQ(M)
+    padding: 6rem calc(10% - 1.5rem)
+  +MQ(XL)
+    padding: 6rem 8.5rem
+  +MQ(XXL)
+    padding: 8rem 10.5rem
+/* ------------------------------------------------*/
+/* Sections Heading End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Preview Links Start
+/* ------------------------------------------------*/
+.demo__links
+  position: relative
+  padding: 0 calc(10% - 1.5rem)
+  a
+    display: block
+    .no-touch &:hover
+      .links__image
+        transform: translateY(-1.6rem)
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+  +MQ(XL)
+    padding: 0 8.5rem
+  +MQ(XXL)
+    padding: 0 10.5rem
+
+.links__item
+  position: relative
+  margin-bottom: 5rem
+  +MQ(M)
+    margin-bottom: 6rem
+  +MQ(XXL)
+    margin-bottom: 8rem
+
+.links__image
+  position: relative
+  width: 100%
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  transform: translateY(0)
+  transition: all .5s cubic-bezier(0, 1.04, 0.68, 1.04)
+
+.links__caption
+  display: block
+  text-align: center
+/* ------------------------------------------------*/
+/* Preview Links End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Subscribe Section Start
+/* ------------------------------------------------*/
+.subscribe
+  position: relative
+  min-width: 320px
+  background-color: $black
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  background-image: url('../img/demo/bg-demo-subscribe.webp')
+  +MQ(XL)
+    background-attachment: fixed
+
+.subscribe__container
+  position: relative
+  padding: 8rem calc(10% - 1.5rem)
+  text-align: center
+  +MQ(M)
+    padding: 10rem calc(10% - 1.5rem)
+  +MQ(XL)
+    padding: 10rem 8.5rem
+  +MQ(XXL)
+    padding: 13rem 10.5rem
+
+.subscribe__content
+  position: relative
+  padding: 2rem
+  border: 1px solid $white
+  +cover-dark
+  +MQ(M)
+    max-width: 500px
+    margin: 0 auto
+  +MQ(XXL)
+    max-width: 560px
+
+.subscribe__title
+  margin: 0 0 5rem 0
+
+.subscribe__form
+  position: relative
+  text-align: center
+
+.reply-group
+  position: absolute
+  +center
+  width: 100%
+  text-align: center
+  opacity: 0
+  transition: opacity $animation-duration - .3s ease-in-out
+  &.is-visible
+    opacity: 1
+
+.reply-group__icon
+  display: block
+  position: relative
+  font-size: 4rem
+  line-height: 1
+  color: $crimson
+
+.reply-group__title
+  font: normal 600 1.8rem/1.1 $default-font
+  text-transform: uppercase
+  color: $txt-bright
+  margin-top: .7rem
+
+.reply-group__text
+  display: block
+  font: normal 300 1.4rem/1.4 $default-font
+  color: $txt-medium
+  margin-top: .2rem
+
+form
+  position: relative
+  width: 100%
+  text-align: center
+  input, textarea
+    position: relative
+    display: block
+    width: 100%
+    border: none
+    outline: none
+    margin: 0
+    padding: 0
+    background-color: transparent
+    padding: 1.2rem 1rem
+    font: normal 400 1.4rem/1.6 $default-font
+    transition: border .3s
+  input
+    height: 4.4rem
+    margin: 0 0 .8rem 0
+  .inputs-description
+    display: block
+    width: 100%
+    margin-bottom: 1.4rem
+    text-align: right
+    font: normal 400 1.2rem/1 $default-font
+
+.form-light
+  input, textarea
+    font-weight: 300
+  ::-webkit-input-placeholder
+    color: $txt-muted
+  :-moz-placeholder
+    color: $txt-muted
+  ::-moz-placeholder
+    color: $txt-muted
+  :-ms-input-placeholder
+    color: $txt-muted
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $txt-bright
+  input:required:valid,
+  textarea:required:valid
+    color: $txt-bright
+  input, textarea
+    border: 1px solid $white
+    color: $txt-bright
+    &:focus
+      border: 1px solid $crimson
+  .inputs-description
+    color: $txt-muted
+
+.form
+  opacity: 1
+  text-align: center
+  transition: opacity $animation-duration - .3s ease-in-out
+  &.is-hidden
+    opacity: 0
+/* ------------------------------------------------*/
+/* Subscribe Section End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Footer Start
+/* ------------------------------------------------*/
+.footer
+  background-color: $black
+  position: relative
+  padding: 5rem calc(10% - 1.5rem)
+  text-align: center
+  +MQ(XL)
+    padding: 5rem 8.5rem
+  +MQ(XXL)
+    padding: 6rem 10.5rem
+/* ------------------------------------------------*/
+/* Footer End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Animations Start
+/* ------------------------------------------------*/
+@keyframes blockMove
+  0%
+    transform: translateY(102%)
+  35%
+    transform: translateY(0)
+  55%
+    transform: translateY(0)
+  100%
+    transform: translateY(-102%)
+
+@keyframes itemsOpacity
+  0%
+    opacity: 1
+  35%
+    opacity: 1
+  60%
+    opacity: 0
+  100%
+    opacity: 0
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes slideInUp
+  from
+    transform: translate3d(0, 10px, 0)
+    opacity: 0
+    visibility: visible
+  to
+    transform: translate3d(0, 0, 0)
+    opacity: 1
+
+@keyframes slideInDown
+  from
+    transform: translate3d(0, -30px, 0)
+    opacity: 0
+    visibility: visible
+  to
+    transform: translate3d(0, 0, 0)
+    opacity: 1
+/* ------------------------------------------------*/
+/* Animations End
+/* ------------------------------------------------*/
