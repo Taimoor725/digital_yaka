@@ -209,32 +209,85 @@ $(function() {
   // --------------------------------------------- //
   // Mailchimp Notify Form Start
   // --------------------------------------------- //
-  $('.notify-form').ajaxChimp({
-    callback: mailchimpCallback,
-    url: 'https://besaba.us10.list-manage.com/subscribe/post?u=e8d650c0df90e716c22ae4778&amp;id=54a7906900'
-  });
 
-  function mailchimpCallback(resp) {
-    if(resp.result === 'success') {
-      $('.notify').find('.form').addClass('is-hidden');
-      $('.notify').find('.subscription-ok').addClass('is-visible');
-      setTimeout(function() {
-        // Done Functions
-        $('.notify').find('.subscription-ok').removeClass('is-visible');
-        $('.notify').find('.form').delay(300).removeClass('is-hidden');
-        $('.notify-form').trigger("reset");
-      }, 5000);
-    } else if(resp.result === 'error') {
-      $('.notify').find('.form').addClass('is-hidden');
-      $('.notify').find('.subscription-error').addClass('is-visible');
-      setTimeout(function() {
-        // Done Functions
-        $('.notify').find('.subscription-error').removeClass('is-visible');
-        $('.notify').find('.form').delay(300).removeClass('is-hidden');
-        $('.notify-form').trigger("reset");
-      }, 5000);
-    }
-  };
+
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   emailjs.init("S8If6sM7pmoNfctJN"); // Replace with your actual EmailJS User ID
+  
+  //   $(".notify-form").on("submit", function (event) {
+  //     event.preventDefault(); // Prevent default form submission
+  
+  //     var userEmail = $(".notify-form input[type='email']").val();
+  
+  //     if (!userEmail) {
+  //       alert("Please enter a valid email address.");
+  //       return;
+  //     }
+  
+  //     var templateParams = {
+  //       to_email: "taimoor725tanveer@gmail.com",
+  //       user_email: userEmail, // The subscriber's email
+  //     };
+  
+  //     emailjs.send("service_3tc0ogj", "template_bu6fyae", templateParams) // Replace with your EmailJS service & template ID
+  //       .then(function (response) {
+  //         console.log("SUCCESS!", response.status, response.text);
+  //         $(".notify").find(".form").addClass("is-hidden");
+  //         $(".notify").find(".subscription-ok").addClass("is-visible");
+  
+  //         setTimeout(function () {
+  //           $(".notify").find(".subscription-ok").removeClass("is-visible");
+  //           $(".notify").find(".form").delay(300).removeClass("is-hidden");
+  //           $(".notify-form").trigger("reset");
+  //         }, 5000);
+  //       }, function (error) {
+  //         console.log("FAILED...", error);
+  //         $(".notify").find(".form").addClass("is-hidden");
+  //         $(".notify").find(".subscription-error").addClass("is-visible");
+  
+  //         setTimeout(function () {
+  //           $(".notify").find(".subscription-error").removeClass("is-visible");
+  //           $(".notify").find(".form").delay(300).removeClass("is-hidden");
+  //           $(".notify-form").trigger("reset");
+  //         }, 5000);
+  //       });
+  //   });
+  // });
+  
+  
+  // $('.notify-form').ajaxChimp({
+  //   callback: mailchimpCallback,
+  //   url: 'https://besaba.us10.list-manage.com/subscribe/post?u=e8d650c0df90e716c22ae4778&amp;id=54a7906900'
+  // });
+
+  // function mailchimpCallback(resp) {
+  //   if(resp.result === 'success') {
+  //     $('.notify').find('.form').addClass('is-hidden');
+  //     $('.notify').find('.subscription-ok').addClass('is-visible');
+  //     setTimeout(function() {
+  //       // Done Functions
+  //       $('.notify').find('.subscription-ok').removeClass('is-visible');
+  //       $('.notify').find('.form').delay(300).removeClass('is-hidden');
+  //       $('.notify-form').trigger("reset");
+  //     }, 5000);
+  //   } else if(resp.result === 'error') {
+  //     $('.notify').find('.form').addClass('is-hidden');
+  //     $('.notify').find('.subscription-error').addClass('is-visible');
+  //     setTimeout(function() {
+  //       // Done Functions
+  //       $('.notify').find('.subscription-error').removeClass('is-visible');
+  //       $('.notify').find('.form').delay(300).removeClass('is-hidden');
+  //       $('.notify-form').trigger("reset");
+  //     }, 5000);
+  //   }
+  // };
+
+
+
+
+
+
   // --------------------------------------------- //
   // Mailchimp Notify Form End
   // --------------------------------------------- //
