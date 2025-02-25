@@ -92,10 +92,10 @@
   -webkit-text-stroke-color: white;
 }
 .loader__text span.outline-colored {
-  color: #e51743;
+  color: #266cb7;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #e51743;
+  -webkit-text-stroke-color: #266cb7;
 }
 .loader__text span:nth-of-type(2) {
   -webkit-animation: 1s ease-in-out 0.2s infinite fadeIn;
@@ -123,10 +123,10 @@
     -webkit-text-stroke-color: white;
   }
   .loader__text span.outline-colored {
-    color: #e51743;
+    color: #266cb7;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #e51743;
+    -webkit-text-stroke-color: #266cb7;
   }
 }
 @media only screen and (min-width: 1400px) {
@@ -140,10 +140,10 @@
     -webkit-text-stroke-color: white;
   }
   .loader__text span.outline-colored {
-    color: #e51743;
+    color: #266cb7;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #e51743;
+    -webkit-text-stroke-color: #266cb7;
   }
 }
 
