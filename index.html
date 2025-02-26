@@ -413,9 +413,9 @@
                 <figure class="col-12 col-sm-6 my-gallery__item link-l" itemprop="associatedMedia" itemscope
                   itemtype="http://schema.org/ImageObject">
                   <a href="https://dummyimage.com/900x1200/5e5e5e/404040"
-                    data-image="/img/ai/navpage/1.jpg" class="works-link" itemprop="contentUrl"
+                    data-image="img/ai/navpage/1.jpg" class="works-link" itemprop="contentUrl"
                     data-size="900x1200">
-                    <img src="/img/ai/navpage/1.jpg" class="works-image" itemprop="thumbnail"
+                    <img src="img/ai/navpage/1.jpg" class="works-image" itemprop="thumbnail"
                       alt="Image description" />
                   </a>
                   <figcaption class="works-description" itemprop="caption description">
@@ -845,6 +845,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+
+
+<!-- scripts for the form to send info to mail -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
@@ -899,7 +902,7 @@
   emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
 
   document.getElementById("sayhello-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     var form = this;
     var formData = new FormData(form);
