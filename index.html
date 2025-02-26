@@ -850,7 +850,7 @@
 <!-- scripts for the form to send info to mail -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
+    emailjs.init("bekKFkLlQs5TqXz-y"); // Your EmailJS Public Key
 
     $(".notify-form").on("submit", function (event) {
       event.preventDefault(); // Prevent default form submission
@@ -867,7 +867,7 @@
         user_email: userEmail, // Subscriber's email
       };
 
-      emailjs.send("service_rzjgsps", "template_73397xs", templateParams)
+      emailjs.send("service_rzjgsps", "template_a6iudhl", templateParams)
         .then(function (response) {
           console.log("SUCCESS!", response.status, response.text);
           $(".notify").find(".form").addClass("is-hidden");
@@ -899,7 +899,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
+  emailjs.init("bekKFkLlQs5TqXz-y"); // Your EmailJS Public Key
 
   document.getElementById("sayhello-form").addEventListener("submit", function (event) {
     event.preventDefault();
