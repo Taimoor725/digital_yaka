@@ -419,9 +419,9 @@
                       alt="Image description" />
                   </a>
                   <figcaption class="works-description" itemprop="caption description">
-                    <div class="works-description__caption">
+                    <!-- <div class="works-description__caption"> -->
                       <!-- <span>01 / Case study</span> -->
-                    </div>
+                    <!-- </div> -->
                     <h4>
                       <span><strong>Packaging design</strong></span>
                       <br>
@@ -441,9 +441,9 @@
                       alt="Image description" />
                   </a>
                   <figcaption class="works-description" itemprop="caption description">
-                    <div class="works-description__caption">
+                    <!-- <div class="works-description__caption"> -->
                       <!-- <span>02 / Case study</span> -->
-                    </div>
+                    <!-- </div> -->
                     <h4>
                       <span><strong>Mobile app</strong></span>
                       <br>
@@ -463,9 +463,9 @@
                       alt="Image description" />
                   </a>
                   <figcaption class="works-description" itemprop="caption description">
-                    <div class="works-description__caption">
+                    <!-- <div class="works-description__caption"> -->
                       <!-- <span>03 / Case study</span> -->
-                    </div>
+                    <!-- </div> -->
                     <h4>
                       <span><strong>Web design</strong></span>
                       <br>
@@ -486,9 +486,9 @@
                     <div class="overlay"></div>
                   </a>
                   <figcaption class="works-description" itemprop="caption description">
-                    <div class="works-description__caption">
+                    <!-- <div class="works-description__caption"> -->
                       <!-- <span>04 / Case study</span> -->
-                    </div>
+                    <!-- </div> -->
                     <h4>
                       <span><strong>Photography</strong></span>
                       <br>
@@ -847,7 +847,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("S8If6sM7pmoNfctJN"); // Your EmailJS Public Key
+    emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
 
     $(".notify-form").on("submit", function (event) {
       event.preventDefault(); // Prevent default form submission
@@ -860,11 +860,11 @@
       }
 
       var templateParams = {
-        to_email: "taimoor725tanveer@gmail.com",
+        to_email: "info@dijitalyaka.io",
         user_email: userEmail, // Subscriber's email
       };
 
-      emailjs.send("service_3tc0ogj", "template_bu6fyae", templateParams)
+      emailjs.send("service_rzjgsps", "template_73397xs", templateParams)
         .then(function (response) {
           console.log("SUCCESS!", response.status, response.text);
           $(".notify").find(".form").addClass("is-hidden");
@@ -890,6 +890,42 @@
   });
 </script>
 
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("8acTspxhK9Q67G5lF"); // Your EmailJS Public Key
+
+  document.getElementById("sayhello-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    var form = this;
+    var formData = new FormData(form);
+
+    var templateParams = {
+      project_name: formData.get("project_name"),
+      admin_email: formData.get("admin_email"),
+      form_subject: formData.get("form_subject"),
+      user_name: formData.get("Name"),
+      user_email: formData.get("E-mail"),
+      message: formData.get("Message"),
+    };
+
+    emailjs.send("service_rzjgsps", "template_73397xs", templateParams)
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Message sent successfully!");
+        form.reset();
+      }, function (error) {
+        console.log("FAILED...", error);
+        alert("Failed to send message. Please try again.");
+      });
+  });
+});
+
+</script>
 
   <!-- Load Scripts End -->
 

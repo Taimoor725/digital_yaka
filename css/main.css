@@ -1571,6 +1571,7 @@ h1.large span.outline-colored {
 @media only screen and (min-width: 1400px) {
   h1 {
     font-size: 5.2rem;
+    /* gap */
   }
   h1.medium {
     font-size: 11rem;
